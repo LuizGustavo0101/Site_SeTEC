@@ -1,0 +1,456 @@
+$azul: #3054a1;
+$azul-claro: #0077d8;
+$branco: #fff;
+$amarelo: #f7db07;
+$fechar: red;
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100rem;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    padding-left:30px;
+    height: 3.5rem;
+    top: 0;
+    background-color: $azul;
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.64);
+    color: $branco;
+    
+
+    #logo{
+        img{
+            height: 2.5rem;
+        }
+    }
+
+    #menu{
+        display: flex;
+        align-items: center;
+        top: 0;
+        font-weight: bold;
+        letter-spacing: 1px;
+        
+        .menuList{
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+
+            li{
+                padding: 0 15px;  
+                cursor: pointer;
+
+                &:hover{
+                    transform: scale(1.15);
+                    transition: .4s;
+                }
+            }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            gap: 5px;
+            background-color: transparent;
+        
+            span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: black;
+                border-radius: 3px;
+            }
+        }
+
+        #blackout{
+            display: none;
+        }
+   
+        .perfil{
+            background-color: $azul-claro;
+            height: 3.5rem;
+            width: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5rem;
+    
+            .sem_login{
+                label{
+                    cursor: pointer;
+    
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+    
+            .com_login{
+                display: none;
+    
+                label{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#intro{
+    height: 35rem;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.5rem;
+
+    h1{
+        margin: -3rem 0px 5rem 0px;
+        text-align: center;
+        
+    }
+
+    .info{
+        display: flex;
+        padding: 0px 10%;
+        gap: 25%;
+        height: 10rem;
+        
+        p{
+            width: 40%;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+
+            label{
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        .containerImagem{
+            border: 1px solid black;
+            width: 30%;
+        }
+    }
+}
+
+#empresasPremium {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    gap: 2rem;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 10px;
+    }
+
+    article {
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap; // permite quebrar em telas pequenas
+        gap: 1rem;
+        padding: 10px;
+        align-items: center;
+
+        &.empresa1 {
+            flex-direction: row; // imagem à esquerda, texto à direita
+        }
+
+        &.empresa2 {
+            flex-direction: row-reverse; // imagem à direita, texto à esquerda
+        }
+
+        .imagem {
+            border: 1px solid black;
+            max-width: 150px;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .infoEmpresa1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+
+            h2 {
+                border-bottom: 1px solid black;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                button {
+                    border: 1px solid black;
+                    border-radius: 1rem;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .infoEmpresa2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+
+            h2 {
+                border-bottom: 1px solid black;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                button {
+                    border: 1px solid black;
+                    border-radius: 1rem;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+#popup{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.449);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 25rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        .parteSup{
+            display: flex;
+            background-color: $azul;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding:26px 0px 17px 0px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: inset 0px -5px 11px -8px #000000;
+
+            label{
+                position: absolute;
+                margin: 0px 0px 7.6rem 22rem;
+                font-size: 20px;
+                font-weight: 600;
+
+                &:hover{
+                    color: $fechar;
+                    transition: .3s;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .parteInf{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            padding: 20px 20px 30px 20px;
+
+            h1{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+/* ============================= */
+/*         RESPONSIVIDADE        */
+/* ============================= */ 
+
+// Tablets
+@media (max-width: 768px){
+    header {
+        position: fixed;
+        flex-direction: row;
+        padding: 0 15px;
+
+        #menu {           
+            .menuList {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+
+            #blackout{
+                display: none;
+                position: fixed;
+                top: 3.5rem;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.449);
+                z-index: 0;
+
+                .menuLateral{
+                    display: flex;
+                    background-color: white;
+                    position:absolute;
+                    top: -0.1rem;
+                    bottom: 0;
+                    right: -10rem;
+                    width: 10rem;
+                    padding: 2rem 0rem;
+                    justify-content: center;
+                    z-index: 2;
+
+                    .menuListLateral{
+                        list-style: none;
+                        text-align: center;
+                        
+                        li{
+                            padding: 8px 10px;
+                            border-bottom: 1px solid black;
+                        }
+                    }
+                }
+            }
+            
+            .perfil {
+                display: none;
+            }
+        }  
+    }
+
+    #intro{
+        .info{
+            padding: 0;
+            gap:10%;
+            justify-content: center;
+        }
+    }
+
+    #empresasPremium{
+        padding: 0 1rem;
+
+        article {
+            flex-direction: column; // empilha imagem e texto
+            align-items: center;
+
+            .infoEmpresa1, .infoEmpresa2{
+                flex: 2 1 200px;
+            }
+
+            .imagem {
+                max-width: 100%;
+                flex: 1 1 120px;
+            }
+        }
+    }
+}
+
+// Celulares
+@media (max-width: 480px){
+    header{
+        #logo{ 
+            img {
+                height: 2rem;
+            }
+        }
+        
+        .menuList {
+          width: 100%;
+        }
+    }
+
+    #intro{
+
+        h1{
+            margin: 0px 0px 3rem 0px;
+        }
+
+        .info{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:0px 15%;
+            width: auto;
+            height: auto;
+
+            p{
+                width: auto;
+                margin-bottom: 2rem;
+            }
+
+            .containerImagem{
+                width: max-content;
+            }
+        }
+    }
+
+    #popup{
+        .card{
+            width: 20rem;
+            font-size: 15px;
+
+            .parteSup{
+                label{
+                    margin: 0px 0px 6rem 17rem;
+                }
+            }
+        }
+    }
+}

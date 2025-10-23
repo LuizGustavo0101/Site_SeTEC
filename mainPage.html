@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SeTEC - Poli USP</title>
+        <link rel="stylesheet" href="./styles/mainStyles.css">
+        <script src="./script/mainScript.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <div id="logo">
+                <img src="#" alt="logo_SeTEC">
+            </div>
+
+            <nav id="menu">
+                <ul class="menuList">
+                    <li class="sobre">Sobre nós</li>
+                    <li class="integrantes">Integrantes</li>
+                    <li class="edicoes">Edições</li>
+                    <li class="contato">Contato</li>
+                </ul>
+
+                <!-- Botão hamburguer para mobile -->
+                <button class="hamburger" onclick="ativarMenuBar()">
+                    <span class="span1"></span>
+                    <span class="span2"></span>
+                    <span class="span3"></span>
+                </button>
+
+                <div id="blackout">
+                    <div class="menuLateral">
+                        <ul class="menuListLateral">
+                            <li class="sobre">Sobre nós</li>
+                            <li class="integrantes">Integrantes</li>
+                            <li class="edicoes">Edições</li>
+                            <li class="contato">Contato</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="perfil">
+                    <div class="sem_login">
+                        <label>Login</label>
+                    </div>
+
+                    <div class="com_login">
+                        <label>Ver perfil</label>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="intro">
+            <h1>Semana Temática de Engenharia Civil</h1>
+
+            <div class="info">
+                <p>
+                    <label>O que somos?</label><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, expedita natus totam vero excepturi, eaque quos aliquam voluptatem veritatis maxime temporibus eveniet commodi adipisci repudiandae, suscipit corrupti? Expedita, vitae ratione.
+                </p>
+
+                <div class="containerImagem"><img src="#" alt="Foto_geral"></div>
+            </div>
+        </section>
+
+        <section id="empresasPremium">
+            <h1>Empresas da última edição da SeTEC</h1>
+
+            <article class="empresa1">
+                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
+
+                <div class="infoEmpresa1">
+                    <h2>Empresa 1</h2>
+                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
+                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
+                </div>
+            </article>
+
+            <article class="empresa2">
+                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
+
+                <div class="infoEmpresa2">
+                    <h2>Empresa 2</h2>
+                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
+                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
+                </div>
+            </article>
+
+            <article class="empresa1">
+                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
+
+                <div class="infoEmpresa1">
+                    <h2>Empresa 3</h2>
+                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
+                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
+                </div>
+            </article>
+
+            <article class="empresa2">
+                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
+
+                <div class="infoEmpresa2">
+                    <h2>Empresa 4</h2>
+                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
+                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
+                </div>
+            </article>
+        </section>
+        
+        <article id="popup">
+            <div class="card">
+                <div class="parteSup">
+                    <img src="./assets/icones/diamante.png" alt="cota_diamante" width="30%">
+
+                    <label onclick="closePopup()">X</label>
+                </div>
+                
+                <div class="parteInf">
+                    <h1>Cota Diamante</h1>
+                    <p>
+                        Cotas Diamantes são hbfvbhfevhbevib<br>
+                        vefihbvfeiuvfeqihhbfvbhfevhbevibvef<br>
+                        ihbvfeiuvfeqihhbfvbhfevhbevibvefihb<br>
+                        vfeiuvfeqih
+                    </p>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>
