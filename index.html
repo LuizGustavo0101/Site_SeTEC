@@ -1,133 +1,208 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SeTEC - Poli USP</title>
+        <title>SeTEC - Semana Temática da Engenharia Civil</title>
+        <script src="./script/main.js" defer></script>
         <link rel="stylesheet" href="./styles/mainStyles.css">
-        <script src="./script/mainScript.js"></script>
     </head>
-    
+
     <body>
         <header>
-            <div id="logo">
-                <img src="#" alt="logo_SeTEC">
+            <div id="name">
+                <img src="./assets/image/logo setec.png" alt="logo_setec" class="logo">
+                <i class="divisoria_logo"></i>
+                <label class="name">Semana Temática da Engenharia Civil</label>
             </div>
 
-            <nav id="menu">
-                <ul class="menuList">
-                    <li class="sobre">Sobre nós</li>
-                    <li class="integrantes">Integrantes</li>
-                    <li class="edicoes">Edições</li>
-                    <li class="contato">Contato</li>
-                </ul>
+            <div id="listas">
+                <nav id="nav_list">
+                    <ul>
+                        <li class="sobre_nos"><a href="#">Sobre nós</a></li>
+                        <li class="participantes"><a href="#">Participantes</a></li>
+                        <li class="cotas"><a href="#">Cotas</a></li>
+                        <li class="edicoes_passadas"><a href="#">Edições passadas</a></li>
+                        <li class="contato"><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="select">
+                    <div class="bar"></div>
+                </div>
+            </div>
 
-                <!-- Botão hamburguer para mobile -->
-                <button class="hamburger" onclick="ativarMenuBar()">
-                    <span class="span1"></span>
-                    <span class="span2"></span>
-                    <span class="span3"></span>
-                </button>
+            <div id="menu_mobile">
+                <input class="checkbox-toggle" type="checkbox" />
+                <div class="hamburger">
+                    <div></div>
+                </div>
 
-                <div id="blackout">
-                    <div class="menuLateral">
-                        <ul class="menuListLateral">
-                            <li class="sobre">Sobre nós</li>
-                            <li class="integrantes">Integrantes</li>
-                            <li class="edicoes">Edições</li>
-                            <li class="contato">Contato</li>
-                        </ul>
+                <div class="menu">
+                    <div>
+                        <div>
+                            <ul>
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Participantes</a></li>
+                            <li><a href="#">Cotas</a></li>
+                            <li><a href="#">Edições passadas</a></li>
+                            <li><a href="#">Contato</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            
-                <div class="perfil">
-                    <div class="sem_login">
-                        <label>Login</label>
-                    </div>
-
-                    <div class="com_login">
-                        <label>Ver perfil</label>
-                    </div>
-                </div>
-            </nav>
+            </div>
         </header>
 
-        <section id="intro">
-            <h1>Semana Temática de Engenharia Civil</h1>
+        <section id="imagem_inicial">
+            <img src="./assets/image/imagem_home.jpg" class="img_note" alt="imagem_principal_note" width="100%">
+            <img src="./assets/image/home_tablet.png" class="img_tablet" alt="imagem_principal_tablet" width="100%">
+            <img src="./assets/image/home_mobile.png" class="img_mobile" alt="imagem_principal_mobile" width="100%">
 
-            <div class="info">
-                <p>
-                    <label>O que somos?</label><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, expedita natus totam vero excepturi, eaque quos aliquam voluptatem veritatis maxime temporibus eveniet commodi adipisci repudiandae, suscipit corrupti? Expedita, vitae ratione.
-                </p>
+            <div class="main_information">
+                <h1>Conheça a SeTEC</h1>
+                <p>A semana temática de<br>Engenharia Civil da<br>Poli USP</p>
+            </div>
 
-                <div class="containerImagem"><img src="#" alt="Foto_geral"></div>
+            <div class="main_information_tm">
+                <h1>Conheça a SeTEC</h1>
+                <p>A semana temática de<br>Engenharia Civil da<br>Poli USP</p>
             </div>
         </section>
 
-        <section id="empresasPremium">
-            <h1>Empresas da última edição da SeTEC</h1>
+        <section id="carrosel_icons">
+            <div class="faixa-icones">
+                <div class="trilha">
 
-            <article class="empresa1">
-                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
+                    <!-- Primeira sequência -->
+                    <img src="./assets/icon/construction.png" alt="icon1-carrossel">
+                    <img src="./assets/icon/golden-gate-bridge.png" alt="icon2-carrossel">
+                    <img src="./assets/icon/mapping.png" alt="icon3-carrossel">
+                    <img src="./assets/icon/model.png" alt="icon4-carrossel">
+                    <img src="./assets/icon/sofware.png" alt="icon5-carrossel">
+                    <img src="./assets/icon/wall.png" alt="icon6-carrossel">
+                    <img src="./assets/icon/worker.png" alt="icon7-carrossel">
 
-                <div class="infoEmpresa1">
-                    <h2>Empresa 1</h2>
-                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
-                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
+                    <!-- Duplicata -->
+                    <img src="./assets/icon/construction.png" alt="icon1-carrossel">
+                    <img src="./assets/icon/golden-gate-bridge.png" alt="icon2-carrossel">
+                    <img src="./assets/icon/mapping.png" alt="icon3-carrossel">
+                    <img src="./assets/icon/model.png" alt="icon4-carrossel">
+                    <img src="./assets/icon/sofware.png" alt="icon5-carrossel">
+                    <img src="./assets/icon/wall.png" alt="icon6-carrossel">
+                    <img src="./assets/icon/worker.png" alt="icon7-carrossel">
                 </div>
-            </article>
-
-            <article class="empresa2">
-                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
-
-                <div class="infoEmpresa2">
-                    <h2>Empresa 2</h2>
-                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
-                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
-                </div>
-            </article>
-
-            <article class="empresa1">
-                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
-
-                <div class="infoEmpresa1">
-                    <h2>Empresa 3</h2>
-                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
-                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
-                </div>
-            </article>
-
-            <article class="empresa2">
-                <div class="imagem"><img src="#" alt="palestrante_empresa1"></div>
-
-                <div class="infoEmpresa2">
-                    <h2>Empresa 4</h2>
-                    <h3>Conta Premium <button class="botaoInfo" onclick="openPopup()">?</button></h3>
-                    <p>hbfvbhfevhbevibvefihbvfeiuvfeqih</p>
-                </div>
-            </article>
+            </div>
         </section>
-        
-        <article id="popup">
-            <div class="card">
-                <div class="parteSup">
-                    <img src="./assets/icones/diamante.png" alt="cota_diamante" width="30%">
 
-                    <label onclick="closePopup()">X</label>
+        <section id="texto_apresentacao">
+            <div id="textos">
+                <div class="bloco">
+                    <label class="subtitulo">
+                        O que somos?
+                    </label>
+                    <p class="texto">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley.
+                    </p>
                 </div>
                 
-                <div class="parteInf">
-                    <h1>Cota Diamante</h1>
-                    <p>
-                        Cotas Diamantes são hbfvbhfevhbevib<br>
-                        vefihbvfeiuvfeqihhbfvbhfevhbevibvef<br>
-                        ihbvfeiuvfeqihhbfvbhfevhbevibvefihb<br>
-                        vfeiuvfeqih
+                <div class="bloco">
+                    <label class="subtitulo">
+                        Qual o objetivo da SeTEC?
+                    </label>
+                    <p class="texto">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
+                    </p>
+                </div>
+                
+                <div class="bloco">
+                    <label class="subtitulo">
+                        Quem organiza?
+                    </label>
+                    <p class="texto">
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                        It has roots in a piece of classical Latin literature from 45 BC, 
+                        making it over 2000 years old. <br>
+                        <span class="saiba_mais_organizacao">Para saber mais, <a href="#">clique aqui</a></span>
                     </p>
                 </div>
             </div>
-        </article>
+        </section>
+
+        <section id="last_diamonds">
+            <h1 class="titulo-diamantes">
+                Cotas Diamantes das últimas edições
+            </h1>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card_topo">
+                        <h2>Empresa 1</h2>
+                        <p>Cota Premium</p>
+                    </div>
+
+                    <div class="card_imagem">
+                        Imagem
+                    </div>
+
+                    <div class="card_base">
+                        <p>Descrição breve com duas linhas</p>
+                        <button class="botao">Saiba mais</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card_topo">
+                        <h2>Empresa 2</h2>
+                        <p>Cota Premium</p>
+                    </div>
+
+                    <div class="card_imagem">
+                        Imagem
+                    </div>
+
+                    <div class="card_base">
+                        <p>Descrição breve com duas linhas</p>
+                        <button class="botao">Saiba mais</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card_topo">
+                        <h2>Empresa 3</h2>
+                        <p>Cota Premium</p>
+                    </div>
+
+                    <div class="card_imagem">
+                        Imagem
+                    </div>
+
+                    <div class="card_base">
+                        <p>Descrição breve com duas linhas</p>
+                        <button class="botao">Saiba mais</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card_topo">
+                        <h2>Empresa 4</h2>
+                        <p>Cota Premium</p>
+                    </div>
+
+                    <div class="card_imagem">
+                        Imagem
+                    </div>
+
+                    <div class="card_base">
+                        <p>Descrição breve com duas linhas</p>
+                        <button class="botao">Saiba mais</button>
+                    </div>
+                </div> 
+                
+                <p class="outras_empresas">* Para ver outras empresas, <a href="#">clique aqui</a></p>
+            </div>
+        </section>
     </body>
 </html>
+
