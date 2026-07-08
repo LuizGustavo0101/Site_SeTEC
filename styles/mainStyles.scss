@@ -156,7 +156,7 @@ header {
     #menu_mobile{
         display: none;
         
-        @media (width <= 425px) {
+        @media (width <= 768px) {
             display: block;
             
             .checkbox-toggle {
@@ -263,8 +263,8 @@ header {
                 @include flex-center;
             
                 > div {
-                    width: 200vw;
-                    height: 200vw;
+                    width: 250vw;
+                    height: 250vw;
                     color: $main-color;
                     background: $content-bg-color;
                     border-radius: 50%;
@@ -468,15 +468,17 @@ $paragrafer-size: 22px;
 
 #texto_apresentacao {
     #textos {
+        border: 1px solid black;
         height: 570px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         .bloco {
             padding: 0px 5%;
             width: 55%;
             line-height: 1.1;
-            @media (max-width: 914px) {
+            @media (width <= 914px) {
                 width: auto;
                 padding: 3% 15% 2% 15%;
             }
@@ -500,7 +502,7 @@ $paragrafer-size: 22px;
             }
         }
     
-        @media (max-width: 914px) {
+        @media (width <= 914px) and (width > 425px) {
             height: 620px;
             display: flex;
             justify-content: space-between;
@@ -514,6 +516,31 @@ $paragrafer-size: 22px;
                     margin: 0;
                     text-align: center;
                 }   
+            }
+        }
+
+        @media (width <= 425px) {
+            height: 600px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+
+            .bloco {
+                text-align: center;
+
+                &:nth-child(even) {
+                    margin: 0;
+                    text-align: center;
+                }   
+
+                .subtitulo{
+                    font-size: calc($subtitle-size - 30%);
+                }
+
+                .texto{
+                    font-size: calc($paragrafer-size - 30%);
+                }
             }
         }
     }
