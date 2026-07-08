@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
@@ -34,13 +38,17 @@ header #name {
     max-width: 300px;
   }
 }
+header #name a {
+  text-decoration: none;
+  color: white;
+}
 header #name .logo {
   height: 35px;
   width: 60px;
 }
 @media (width <= 425px) {
   header #name .logo {
-    margin-left: 5.8rem;
+    margin-left: 8.4rem;
   }
 }
 header #name .logo:hover {
@@ -490,10 +498,20 @@ header #menu_mobile {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 5rem;
 }
+@media (width <= 425px) {
+  #last_diamonds {
+    padding: 0px 20px;
+  }
+}
 #last_diamonds .titulo-diamantes {
   text-align: center;
   font-size: 36px;
   margin-bottom: 60px;
+}
+@media (width <= 425px) {
+  #last_diamonds .titulo-diamantes {
+    font-size: 26px;
+  }
 }
 #last_diamonds .cards {
   display: grid;
@@ -596,13 +614,18 @@ header #menu_mobile {
   font-family: Arial, Helvetica, sans-serif;
   width: 90%;
   max-width: 1200px;
-  margin: 0px 0px -26rem 0px;
+  margin: 0px 0px 40rem 0px;
   padding: 10% 0;
   background-color: transparent;
 }
 @media (width <= 768px) and (width > 425px) {
   #edicoes {
-    margin: 0px 0px -7rem 0px;
+    margin: 0px 0px 18rem 0px;
+  }
+}
+@media (width <= 425px) {
+  #edicoes {
+    margin: 0px 0px 0px 0px;
   }
 }
 #edicoes .titulo-secao {
@@ -679,22 +702,24 @@ header #menu_mobile {
 #gostou {
   position: absolute;
   padding: 100px 0px 3% 0px;
-  margin: 34rem 0px 0px 0px;
-  z-index: 3;
+  margin: 10rem 0px 0px 0px;
+  z-index: 2;
   background-color: #0079ef;
   left: 0;
   width: 100%;
 }
 #gostou::before {
   content: "";
+  z-index: 2;
   position: absolute;
-  z-index: 3;
   left: 0;
   top: -450px;
   width: 100%;
 }
 @media (width > 768px) {
   #gostou::before {
+    height: 80rem;
+    margin-top: -51.9rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -703,9 +728,8 @@ header #menu_mobile {
 }
 @media (width <= 768px) and (width > 425px) {
   #gostou::before {
-    top: -700px;
-    bottom: 19.3rem;
-    height: auto;
+    height: 50rem;
+    margin-top: -21.6rem;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
@@ -714,8 +738,8 @@ header #menu_mobile {
 }
 @media (width <= 425px) {
   #gostou::before {
-    bottom: 24rem;
-    height: auto;
+    height: 20rem;
+    margin-top: 8.1rem;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
@@ -782,22 +806,22 @@ footer {
   position: absolute;
   right: 0;
   left: 0;
-  margin-top: 54rem;
+  margin-top: 30rem;
   padding: 100px 0px 0px 100px;
   background-color: #0079ef;
   display: flex;
   justify-content: space-between;
-  z-index: 3;
+  z-index: 2;
 }
 @media (width <= 768px) and (width > 425px) {
   footer {
-    margin-top: 53rem;
+    margin-top: 29rem;
     padding: 0px;
   }
 }
 @media (width <= 425px) {
   footer {
-    margin-top: 58rem;
+    margin-top: 34rem;
     padding: 0px 0px 20px 0px;
     flex-direction: column;
   }

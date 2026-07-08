@@ -20,11 +20,10 @@
             <div id="listas">
                 <nav id="nav_list">
                     <ul>
-                        <li class="sobre_nos"><a href="#">Sobre nós</a></li>
-                        <li class="participantes"><a href="#">Participantes</a></li>
-                        <li class="cotas"><a href="#">Cotas</a></li>
-                        <li class="edicoes_passadas"><a href="#">Edições passadas</a></li>
-                        <li class="contato"><a href="#">Contato</a></li>
+                        <li class="sobre_nos"><a href="#carrosel_icons">Sobre nós</a></li>
+                        <li class="participantes"><a href="#ultimos_diamantes">Últimos Diamantes</a></li>
+                        <li class="edicoes_passadas"><a href="#edicoes">Edições passadas</a></li>
+                        <li class="contato"><a href="#gostou">Contato</a></li>
                     </ul>
                 </nav>
                 
@@ -46,11 +45,10 @@
                         </div>
                         <div>
                             <ul>
-                            <li><a href="#">Sobre nós</a></li>
-                            <li><a href="#">Participantes</a></li>
-                            <li><a href="#">Cotas</a></li>
-                            <li><a href="#">Edições passadas</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a href="#carrosel_icons">Sobre nós</a></li>
+                            <li><a href="#ultimos_diamantes">Últimos Diamantes</a></li>
+                            <li><a href="#edicoes">Edições passadas</a></li>
+                            <li><a href="#gostou">Contato</a></li>
                             </ul>
                         </div>
                     </div>
@@ -127,7 +125,7 @@
                         Somos um evento organizado pelos próprios estudantes de Engenharia 
                         Civil da USP. Ou seja: um evento feito por estudantes, para 
                         estudantes.
-                        <span class="saiba_mais_organizacao">Para saber mais, <a href="#">clique aqui</a></span>
+                        <span class="saiba_mais_organizacao">Para saber mais, <a href="#" id="ultimos_diamantes">clique aqui</a></span>
                     </p>
                 </div>
             </div>
@@ -149,7 +147,7 @@
 
                     <div class="card_base">
                         <p>Gigante brasileira de infraestrutura urbana e soluções tecnológicas</p>
-                        <button class="botao">Saiba mais</button>
+                        <button class="botao" onclick="window.location.href='https://www.concremat.com.br/'">Saiba mais</button>
                     </div>
                 </div>
 
@@ -163,7 +161,7 @@
 
                     <div class="card_base">
                         <p>Líder em produção de aço e soluções sustentáveis para construção</p>
-                        <button class="botao">Saiba mais</button>
+                        <button class="botao" onclick="window.location.href='https://www2.gerdau.com.br/'">Saiba mais</button>
                     </div>
                 </div>
 
@@ -177,13 +175,13 @@
 
                     <div class="card_base">
                         <p>Referência em engenharia civil e grandes obras de infraestrutura</p>
-                        <button class="botao">Saiba mais</button>
+                        <button class="botao" onclick="window.location.href='https://agengenharia.eng.br/'">Saiba mais</button>
                     </div>
                 </div>
 
                 <div class="card emp4">
                     <div class="card_topo">
-                        <h2>TPF</h2>
+                        <h2>TPF Engenharia</h2>
                         <p>Cota Diamante</p>
                     </div>
 
@@ -191,7 +189,7 @@
 
                     <div class="card_base">
                         <p>Multinacional de engenharia consultiva, gerenciamento e projetos complexos</p>
-                        <button class="botao">Saiba mais</button>
+                        <button class="botao" onclick="window.location.href='https://www.tpfengenharia.com.br/'">Saiba mais</button>
                     </div>
                 </div> 
                 
@@ -251,20 +249,20 @@
                     Entre em contato!!
                 </h2>
 
-                <div class="contatos">
+                <div class="contatos" id="contatos">
                     <div class="contato-item">
                         <img src="./assets/icon/mail_1.png" alt="">
-                        <span><a href="#">usp.poli.setec@gmail.com</a></span>
+                        <span><a href="https://mail.google.com/mail/?tf=cm&to=usp.poli.setec@gmail.com">usp.poli.setec@gmail.com</a></span>
                     </div>
 
                     <div class="contato-item">
                         <img src="./assets/icon/whatsapp_1.png" alt="">
-                        <span>(11)98368-1452</span>
+                        <span><a href="https://wa.me/+5511983681452?text=Ola!! Vim pelo site, gostaria de falar sobre a SeTEC">(11)98368-1452</a></span>
                     </div>
 
                     <div class="contato-item">
                         <img src="./assets/icon/pin_1.png" alt="">
-                        <span>Prédio Civil</span>
+                        <span><a href="https://www.google.com/maps/place/CEC+-+Centro+de+Engenharia+Civil/@-23.555294,-46.7320424,19z/data=!4m6!3m5!1s0x94ce5617222726e3:0x635882e778acd1f!8m2!3d-23.5553649!4d-46.7323102!16s%2Fg%2F11by_f6mzm?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D">Prédio Civil</a></span>
                     </div>
                 </div>
             </div>
@@ -276,9 +274,9 @@
                     <a href="#" class="logo_setec"><img src="./assets/image/logo setec.png" alt="SeTEC"></a>
 
                     <div class="redes">
-                        <a href="#"><img src="./assets/icon/facebook.png"></a>
-                        <a href="#"><img src="./assets/icon/instagram.png"></a>
-                        <a href="#"><img src="./assets/icon/linkedin.png"></a>
+                        <a href="https://web.facebook.com/setecpoli/?_rdc=1&_rdr#"><img src="./assets/icon/facebook.png"></a>
+                        <a href="https://www.instagram.com/setecpoli/"><img src="./assets/icon/instagram.png"></a>
+                        <a href="https://br.linkedin.com/company/setecpoli"><img src="./assets/icon/linkedin.png"></a>
                     </div>
                 </div>
 
@@ -286,22 +284,21 @@
                     <div class="footer-coluna">
                         <h3>Acesso Rápido</h3>
                         <div class="footer-itens">
-                            <a href="#">Home</a>
-                            <a href="#">Sobre nós</a>
-                            <a href="#">Participantes</a>
-                            <a href="#">Cotas</a>
-                            <a href="#">Edições passadas</a>
-                            <a href="#">Contato</a>
+                            <a href="#name">Home</a>
+                            <a href="#carrosel_icons">Sobre nós</a>
+                            <a href="#ultimos_diamantes">Últimos Diamantes</a>
+                            <a href="#edicoes">Edições passadas</a>
+                            <a href="#gostou">Contato</a>
                         </div>
                     </div>
 
                     <div class="footer-coluna">
                         <h3>Parceiras Cota Diamante</h3>
                         <div class="footer-itens">
-                            <a href="#">Concremat</a>
-                            <a href="#">Gerdau</a>
-                            <a href="#">Andrade Gutierrez</a>
-                            <a href="#">TPF</a>
+                            <a href="https://www.concremat.com.br/">Concremat</a>
+                            <a href="https://www2.gerdau.com.br/">Gerdau</a>
+                            <a href="https://agengenharia.eng.br/">Andrade Gutierrez</a>
+                            <a href="https://www.tpfengenharia.com.br/">TPF</a>
                         </div>
                     </div>
                 </div>
