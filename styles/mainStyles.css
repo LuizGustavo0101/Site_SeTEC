@@ -38,6 +38,11 @@ header #name .logo {
   height: 35px;
   width: 60px;
 }
+@media (width <= 425px) {
+  header #name .logo {
+    margin-left: 5.8rem;
+  }
+}
 header #name .logo:hover {
   cursor: pointer;
 }
@@ -48,10 +53,20 @@ header #name .divisoria_logo {
   background-color: #ffffff;
   display: inline-block;
 }
+@media (width <= 425px) {
+  header #name .divisoria_logo {
+    display: none;
+  }
+}
 header #name .name {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.3;
+}
+@media (width <= 425px) {
+  header #name .name {
+    display: none;
+  }
 }
 header #name .name:hover {
   cursor: pointer;
@@ -217,6 +232,14 @@ header #menu_mobile {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+  }
+  header #menu_mobile .menu > div .hamb_logo {
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+  }
+  header #menu_mobile .menu > div .hamb_logo img {
+    width: 50%;
   }
   header #menu_mobile .menu > div > div {
     text-align: center;
@@ -349,7 +372,7 @@ header #menu_mobile {
     margin-top: -1px;
     padding: 15px 0px;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -566,12 +589,21 @@ header #menu_mobile {
 }
 
 #edicoes {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
   font-family: Arial, Helvetica, sans-serif;
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0px 0px -26rem 0px;
   padding: 10% 0;
   background-color: transparent;
+}
+@media (width <= 768px) and (width > 425px) {
+  #edicoes {
+    margin: 0px 0px -7rem 0px;
+  }
 }
 #edicoes .titulo-secao {
   text-align: center;
@@ -647,7 +679,7 @@ header #menu_mobile {
 #gostou {
   position: absolute;
   padding: 100px 0px 3% 0px;
-  margin: 350px 0px 0px 0px;
+  margin: 34rem 0px 0px 0px;
   z-index: 3;
   background-color: #0079ef;
   left: 0;
@@ -658,13 +690,37 @@ header #menu_mobile {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: -1050px;
+  top: -450px;
   width: 100%;
-  height: 1050px;
-  background-image: url("../assets/image/fundofinal.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+}
+@media (width > 768px) {
+  #gostou::before {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-image: url("../assets/image/fundofinal.png");
+  }
+}
+@media (width <= 768px) and (width > 425px) {
+  #gostou::before {
+    top: -700px;
+    bottom: 19.3rem;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    background-image: url("../assets/image/fundofinal_tablet.png");
+  }
+}
+@media (width <= 425px) {
+  #gostou::before {
+    bottom: 24rem;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    background-image: url("../assets/image/fundofinal_mobile.png");
+  }
 }
 #gostou .contato-card {
   display: flex;
@@ -723,30 +779,60 @@ header #menu_mobile {
 }
 
 footer {
-  margin-top: 682px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-top: 54rem;
   padding: 100px 0px 0px 100px;
   background-color: #0079ef;
   display: flex;
   justify-content: space-between;
+  z-index: 3;
+}
+@media (width <= 768px) and (width > 425px) {
+  footer {
+    margin-top: 53rem;
+    padding: 0px;
+  }
+}
+@media (width <= 425px) {
+  footer {
+    margin-top: 58rem;
+    padding: 0px 0px 20px 0px;
+    flex-direction: column;
+  }
 }
 footer .parte_esquerda {
   width: 50%;
   display: flex;
   flex-direction: column;
+  padding: 90px 0px 0px 40px;
+}
+@media (width <= 425px) {
+  footer .parte_esquerda {
+    padding: 70px 0px 0px 10px;
+  }
 }
 footer .parte_esquerda .footer-coluna-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
+}
+@media (width <= 425px) {
+  footer .parte_esquerda .footer-coluna-logo {
+    margin-left: 9rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+  }
 }
 footer .parte_esquerda .footer-coluna-logo a img {
   width: 100px;
 }
 footer .parte_esquerda .footer-coluna-logo .redes {
   display: flex;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 footer .parte_esquerda .footer-coluna-logo .redes a:hover {
   transform: scale(1.2);
@@ -764,6 +850,11 @@ footer .parte_esquerda .footer-conteudo {
   margin: 1rem 0px 0px 1.5rem;
   width: 80%;
   gap: 12px;
+}
+@media (width <= 425px) {
+  footer .parte_esquerda .footer-conteudo {
+    flex-direction: column;
+  }
 }
 footer .parte_esquerda .footer-conteudo .footer-coluna h3 {
   color: white;
@@ -792,7 +883,21 @@ footer .parte_esquerda .footer-conteudo .footer-coluna .footer-itens a:hover {
 }
 footer .parte_direita {
   width: 50%;
-  background: url("../assets/image/cec.png") right/44% no-repeat;
+  display: flex;
+  justify-content: end;
+}
+@media (width <= 768px) and (width > 425px) {
+  footer .parte_direita img {
+    scale: 0.8;
+    position: absolute;
+    right: -2.6rem;
+    bottom: -3.4rem;
+  }
+}
+@media (width <= 425px) {
+  footer .parte_direita .comp {
+    display: none;
+  }
 }
 
 @keyframes deslizar-direita {
