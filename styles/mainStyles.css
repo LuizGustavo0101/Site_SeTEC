@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -391,7 +392,6 @@ header #menu_mobile {
 }
 
 #texto_apresentacao #textos {
-  border: 1px solid black;
   height: 570px;
   display: flex;
   flex-direction: column;
@@ -493,7 +493,7 @@ header #menu_mobile {
 }
 #last_diamonds .cards .card_topo {
   text-align: center;
-  padding: 5px;
+  padding: 15px 5px 5px 5px;
 }
 #last_diamonds .cards .card_topo h2 {
   margin: 0;
@@ -505,13 +505,9 @@ header #menu_mobile {
 }
 #last_diamonds .cards .card_imagem {
   height: 180px;
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #last_diamonds .cards .card_base {
-  padding: 15px 0px 20px 0px;
+  padding: 15px 15px 20px 15px;
   text-align: center;
 }
 #last_diamonds .cards .card_base p {
@@ -536,6 +532,30 @@ header #menu_mobile {
   background-color: rgba(138, 82, 251, 0.7450980392);
   transition: 0.3s;
 }
+#last_diamonds .cards .emp1 .card_imagem {
+  background: url("../assets/image/concremat_stand.jpg") center/100% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#last_diamonds .cards .emp2 .card_imagem {
+  background: url("../assets/image/gerdau_logo.jpeg") center/100% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#last_diamonds .cards .emp3 .card_imagem {
+  background: url("../assets/image/AG_stand.jpg") center/100% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#last_diamonds .cards .emp4 .card_imagem {
+  background: url("../assets/image/tpf_logo.jpg") center/100% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #last_diamonds .cards .outras_empresas {
   grid-column: 1/-1;
   color: gray;
@@ -543,6 +563,85 @@ header #menu_mobile {
 }
 #last_diamonds .cards .outras_empresas a:hover {
   color: darkblue;
+}
+
+.edicoes {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10% 0;
+  background-color: transparent;
+}
+.edicoes .titulo-secao {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 3rem;
+}
+.edicoes .evento-atual {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.edicoes .evento-atual h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 30px;
+}
+.edicoes .evento-atual img {
+  width: 300px;
+  max-width: 100%;
+}
+.edicoes .edicao {
+  margin-bottom: 150px;
+}
+.edicoes .edicao h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 30px;
+}
+.edicoes .carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+.edicoes .carousel .carousel-track-container {
+  width: 100%;
+  height: 500px;
+  background: #ddd;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.edicoes .carousel .carousel-track-container .carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+.edicoes .carousel .carousel-track-container .carousel-track .slide {
+  min-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.edicoes .carousel .seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.edicoes .carousel .esquerda {
+  left: 20px;
+}
+.edicoes .carousel .direita {
+  right: 20px;
 }
 
 @keyframes deslizar-direita {

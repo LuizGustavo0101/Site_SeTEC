@@ -27,3 +27,38 @@ document.addEventListener("DOMContentLoaded", () => {
         moveBar(listItems[0]); 
     });
 });
+
+
+const todosOsCarrosseis = document.querySelectorAll('.carousel');
+
+todosOsCarrosseis.forEach((carousel) => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const btnEsquerda = carousel.querySelector('.seta.esquerda');
+    const btnDireita = carousel.querySelector('.seta.direita');
+
+    let slideAtual = 0;
+
+    function moverCarrossel(index) {
+        const deslocamento = -(index * 100);
+        track.style.transform = `translateX(${deslocamento}%)`;
+    }
+
+    btnDireita.addEventListener('click', () => {
+        if (slideAtual === slides.length - 1) {
+            slideAtual = 0; 
+        } else {
+            slideAtual++;
+        }
+        moverCarrossel(slideAtual);
+    });
+
+    btnEsquerda.addEventListener('click', () => {
+        if (slideAtual === 0) {
+            slideAtual = slides.length - 1; 
+        } else {
+            slideAtual--;
+        }
+        moverCarrossel(slideAtual);
+    });
+});

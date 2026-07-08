@@ -37,6 +37,7 @@ $anim-duration: 0.4s;
 
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 $header-bg: #8b5cf6;
@@ -468,7 +469,6 @@ $paragrafer-size: 22px;
 
 #texto_apresentacao {
     #textos {
-        border: 1px solid black;
         height: 570px;
         display: flex;
         flex-direction: column;
@@ -604,7 +604,7 @@ $espaçamento_card: 290px;
 
             &_topo {
                 text-align: center;
-                padding: 5px;
+                padding: 15px 5px 5px 5px;
 
                 h2 {
                     margin: 0;
@@ -619,14 +619,10 @@ $espaçamento_card: 290px;
 
             &_imagem {
                 height: $altura-img-card;
-                background-color: $cor-fundo-img;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
 
             &_base {
-                padding: 15px 0px 20px 0px;
+                padding: 15px 15px 20px 15px;
                 text-align: center;
 
                 p {
@@ -656,6 +652,42 @@ $espaçamento_card: 290px;
             }
         }
 
+        .emp1{
+            .card_imagem{
+                background: url("../assets/image/concremat_stand.jpg") center / 100% no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .emp2{
+            .card_imagem{
+                background: url("../assets/image/gerdau_logo.jpeg") center / 100% no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .emp3{
+            .card_imagem{
+                background: url("../assets/image/AG_stand.jpg") center / 100% no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .emp4{
+            .card_imagem{
+                background: url("../assets/image/tpf_logo.jpg") center / 100% no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
         .outras_empresas {
             grid-column: 1/-1;
             color: $cor-rodape;
@@ -669,6 +701,113 @@ $espaçamento_card: 290px;
         }
     }
 }
+
+$fonte-principal: Arial, Helvetica, sans-serif;
+$largura-maxima-container: 1200px;
+$largura-maxima-carousel: 900px;
+$cor-fundo-imagem: #ddd;
+$cor-fundo-seta: rgba(0, 0, 0, 0.45);
+$cor-texto-seta: white;
+.edicoes {
+    font-family: $fonte-principal;
+    width: 90%;
+    max-width: $largura-maxima-container;
+    margin: auto;
+    padding: 10% 0;
+    background-color: transparent;
+
+    .titulo-secao {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 3rem;
+    }
+
+    .evento-atual {
+        text-align: center;
+        margin-bottom: 5rem;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 30px;
+        }
+
+        img {
+            width: 300px;
+            max-width: 100%;
+        }
+    }
+
+    .edicao {
+        margin-bottom: 150px;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 30px;
+        }
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        max-width: $largura-maxima-carousel;
+        margin: auto;
+
+        .carousel-track-container {
+            width: 100%;
+            height: 500px;
+            background: $cor-fundo-imagem;
+            overflow: hidden;
+            border-radius: 12px;
+
+            .carousel-track {
+                display: flex;
+                height: 100%;
+                transition: transform 0.4s ease-in-out;
+
+                .slide {
+                    min-width: 100%;
+                    height: 100%;
+                    object-fit:cover;
+                }
+            }
+        }
+
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: $cor-fundo-seta;
+            color: $cor-texto-seta;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .esquerda {
+            left: 20px;
+        }
+
+        .direita {
+            right: 20px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 @keyframes deslizar-direita {
     0% {
