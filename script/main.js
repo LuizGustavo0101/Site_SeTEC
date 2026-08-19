@@ -30,26 +30,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelectorAll(".carousel").forEach((carousel) => {
+        const trackContainer = carousel.querySelector(".carousel-track-container");
         const track = carousel.querySelector(".carousel-track");
         const slides = track ? Array.from(track.children) : [];
         const btnEsquerda = carousel.querySelector(".seta.esquerda");
         const btnDireita = carousel.querySelector(".seta.direita");
+        const indicatorsContainer = carousel.querySelector(".carousel-indicators");
 
-        if (!track || slides.length === 0 || !btnEsquerda || !btnDireita) return;
+        if (!track || slides.length === 0) return;
 
         let slideAtual = 0;
+        const totalSlides = slides.length;
 
-        function moverCarrossel(index) {
-            track.style.transform = `translateX(-${index * 100}%)`;
+        if (indicatorsContainer) {
+            indicatorsContainer.innerHTML = "";
+            slides.forEach((_, index) => {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                if (index === 0) dot.classList.add("active"); 
+                indicatorsContainer.appendChild(dot);
+            });
+        }
+        
+        const dots = carousel.querySelectorAll(".dot");
+
+        function atualizarDots(index) {
+            dots.forEach(dot => dot.classList.remove("active"));
+            if (dots[index]) dots[index].classList.add("active");
         }
 
-        btnDireita.addEventListener("click", () => {
-            slideAtual = (slideAtual + 1) % slides.length;
-            moverCarrossel(slideAtual);
-        });
+        function moverCarrossel(index) {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile && trackContainer) {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                trackContainer.scrollTo({
+                    left: index * slideWidth,
+                    behavior: 'smooth'
+                });
+            } else {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            }
+            atualizarDots(index);
+        }
 
-        btnEsquerda.addEventListener("click", () => {
-            slideAtual = (slideAtual - 1 + slides.length) % slides.length;
+        if (btnDireita) {
+            btnDireita.addEventListener("click", () => {
+                slideAtual = (slideAtual + 1) % totalSlides;
+                moverCarrossel(slideAtual);
+            });
+        }
+
+        if (btnEsquerda) {
+            btnEsquerda.addEventListener("click", () => {
+                slideAtual = (slideAtual - 1 + totalSlides) % totalSlides;
+                moverCarrossel(slideAtual);
+            });
+        }
+
+        if (trackContainer) {
+            trackContainer.addEventListener("scroll", () => {
+                if (window.innerWidth <= 768) {
+                    const scrollPosition = trackContainer.scrollLeft;
+                    const slideWidth = slides[0].getBoundingClientRect().width;
+                    
+                    const novoIndex = Math.round(scrollPosition / slideWidth);
+                    
+                    if (novoIndex !== slideAtual && novoIndex >= 0 && novoIndex < totalSlides) {
+                        slideAtual = novoIndex;
+                        atualizarDots(slideAtual);
+                    }
+                }
+            });
+        }
+        
+        window.addEventListener("resize", () => {
             moverCarrossel(slideAtual);
         });
     });

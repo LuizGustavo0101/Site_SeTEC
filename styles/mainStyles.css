@@ -493,13 +493,14 @@ header #menu_mobile {
   }
 }
 #last_diamonds .cards {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 290px));
-  row-gap: 40px;
+  max-width: 1250px;
+  gap: 40px;
+  margin: 0 auto;
 }
 #last_diamonds .cards .card {
-  justify-self: center;
   width: 250px;
   background-color: white;
   border-radius: 12px;
@@ -576,12 +577,13 @@ header #menu_mobile {
   justify-content: center;
   align-items: center;
 }
-#last_diamonds .cards .outras_empresas {
-  grid-column: 1/-1;
+#last_diamonds .outras_empresas {
   color: gray;
   font-size: 21px;
+  text-align: center;
+  margin-top: 30px;
 }
-#last_diamonds .cards .outras_empresas a:hover {
+#last_diamonds .outras_empresas a:hover {
   color: darkblue;
 }
 
@@ -637,6 +639,25 @@ header #menu_mobile {
   overflow: hidden;
   border-radius: 12px;
 }
+@media (max-width: 786px) {
+  #edicoes .carousel .carousel-track-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  #edicoes .carousel .carousel-track-container::-webkit-scrollbar {
+    display: none;
+  }
+  #edicoes .carousel .carousel-track-container .carousel-track {
+    transform: none !important;
+    transition: none;
+  }
+  #edicoes .carousel .carousel-track-container .slide {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+}
 #edicoes .carousel .carousel-track-container .carousel-track {
   display: flex;
   height: 100%;
@@ -658,9 +679,28 @@ header #menu_mobile {
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.45);
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+@media (max-width: 768px) {
+  #edicoes .carousel .seta {
+    display: none;
+  }
+}
+#edicoes .carousel .seta:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+#edicoes .carousel .seta:active {
+  transform: translateY(-50%) scale(0.95);
 }
 #edicoes .carousel .esquerda {
   left: 20px;
