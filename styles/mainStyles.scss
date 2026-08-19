@@ -33,15 +33,16 @@ $anim-duration: 0.4s;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-drag: none;
 }
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 72px;
 }
 
 body {
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
 $header-bg: #8b5cf6;
@@ -64,6 +65,9 @@ header {
     color: $header-text-color;
     box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.75);
     z-index: 3;
+    @media (width <= 425px) {
+        justify-content: center;
+    }
 
     #name {
         display: flex;
@@ -82,9 +86,6 @@ header {
         .logo {
             height: 35px;
             width: 60px;
-            @media (width <= 425px) {
-                margin-left: 8.4rem;
-            }
             
             &:hover {
                 cursor: pointer;
@@ -175,7 +176,7 @@ header {
     #menu_mobile{
         display: none;
         
-        @media (width <= 768px) {
+        @media (max-width: 914px) {
             display: block;
             
             .checkbox-toggle {
@@ -367,8 +368,17 @@ $h1-size: 70px;
 $p-size: 30px;
 #imagem_inicial {
     margin-top: 60px;
+    position: relative;
 
     .img {
+        &_note,
+        &_tablet,
+        &_mobile {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
         &_note {
             @media (max-width: 914px) {
                 display: none;
@@ -392,36 +402,22 @@ $p-size: 30px;
 
     .main_information {
         position: absolute;
-        top: 8rem;
-        right: 3.5rem;
-        @media (max-width: 1000px) {
-            right: 2rem;
-            top: 7rem;
-        }
+        top: clamp(2rem, 8vw, 8rem);
+        right: clamp(1rem, 3.5vw, 3.5rem);
         @media (max-width: 684px) {
             display: none;
         }
 
         h1 {
-            font-size: $h1-size;
+            font-size: clamp(2.5rem, 5vw, $h1-size);
             color: white;
-            @media (max-width: 1010px) {
-                font-size: calc($h1-size - 25%);
-            }
-            @media (max-width: 914px) {
-                font-size: calc($h1-size - 175%);
-            }
         }
 
         p {
             color: white;
             text-align: right;
-            font-size: $p-size;
-            margin-right: 15px;  
-            @media (max-width: 914px) {
-                font-size: calc($p-size - 40%);
-                margin-right: 5px;
-            }
+            font-size: clamp(1rem, 2.5vw, $p-size);
+            margin-right: 0;
         }
     }
 
@@ -438,6 +434,15 @@ $p-size: 30px;
             padding: 15px 0px;
             color: white;
             font-size: 20px;
+
+            h1 {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+
+            p {
+                font-size: clamp(1rem, 5vw, 1.5rem);
+                line-height: 1.2;
+            }
         }
     }
 }
@@ -451,7 +456,7 @@ $edge-width: 160px;
     width: 100%;
     max-width: 1200px;
     margin: 4rem auto;
-    padding: 15px auto;
+    padding: 15px 0;
     overflow: hidden;
     position: relative; 
 
@@ -485,6 +490,7 @@ $edge-width: 160px;
             height: $icon-height;
             width: auto;
             object-fit: contain;
+            filter: brightness(90%);
         }
     }
 }
@@ -494,10 +500,10 @@ $subtitle-size: 28px;
 $paragrafer-size: 22px;
 #texto_apresentacao {
     #textos {
-        height: 570px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 3rem;
+        padding: 2rem 0;
 
         .bloco {
             padding: 0px 5%;
@@ -514,24 +520,20 @@ $paragrafer-size: 22px;
             }
     
             .subtitulo {
-                font-size: $subtitle-size;
+                font-size: clamp(1.25rem, 2.5vw, $subtitle-size);
                 font-weight: bolder;
                 font-family: $font-padrao;
             }
     
             .texto {
                 color: rgb(100, 100, 100);
-                font-size: $paragrafer-size;
+                font-size: clamp(1rem, 2vw, $paragrafer-size);
                 margin-top: 10px;
                 font-family: $font-padrao;
             }
         }
     
         @media (width <= 914px) and (width > 425px) {
-            height: 620px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
             align-items: center;
     
             .bloco {
@@ -545,10 +547,6 @@ $paragrafer-size: 22px;
         }
 
         @media (width <= 425px) {
-            height: 600px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
             align-items: center;
 
             .bloco {
@@ -559,13 +557,6 @@ $paragrafer-size: 22px;
                     text-align: center;
                 }   
 
-                .subtitulo{
-                    font-size: calc($subtitle-size - 30%);
-                }
-
-                .texto{
-                    font-size: calc($paragrafer-size - 30%);
-                }
             }
         }
     }
@@ -741,24 +732,16 @@ $cor-texto-seta: white;
 #edicoes {
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    align-self: center;
     font-family: $fonte-principal;
     width: 90%;
     max-width: $largura-maxima-container;
-    margin: 0px 0px 40rem 0px;
-    padding: 10% 0;
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 8rem) 0;
     background-color: transparent;
-    @media (width <= 768px) and (width > 425px) {
-        margin: 0px 0px 18rem 0px;
-    }
-    @media (width <= 425px) {
-        margin: 0px 0px 0px 0px;
-    }
 
     .titulo-secao {
         text-align: center;
-        font-size: 40px;
+        font-size: clamp(2rem, 4vw, 2.5rem);
         margin-bottom: 3rem;
     }
 
@@ -779,13 +762,17 @@ $cor-texto-seta: white;
     }
 
     .edicao {
-        margin-bottom: 150px;
+        margin-bottom: clamp(4rem, 10vw, 9.375rem);
 
         h2 {
             text-align: center;
             margin-bottom: 1.5rem;
             font-size: 30px;
         }
+    }
+
+    .edicao:last-child {
+        margin-bottom: 0;
     }
 
     .carousel {
@@ -796,7 +783,7 @@ $cor-texto-seta: white;
 
         .carousel-track-container {
             width: 100%;
-            height: 500px;
+            aspect-ratio: 16 / 9;
             background: $cor-fundo-imagem;
             overflow: hidden;
             border-radius: 12px;
@@ -843,55 +830,43 @@ $cor-azul-gostou: #0079ef;
 $cor-fundo-card: white;
 $fonte-padrao: Arial, Helvetica, sans-serif;
 #gostou {
-    position: absolute;
-    padding: 100px 0px 3% 0px;
-    margin: 10rem 0px 0px 0px;
-    z-index: 2;
+    position: relative;
+    isolation: isolate;
+    padding: clamp(4rem, 8vw, 6.25rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
     background-color: $cor-azul-gostou;
-    left: 0;
     width: 100%;
+    overflow: hidden;
 
     &::before {
         content: "";
-        z-index: 2;
         position: absolute;
-        left: 0;
-        top: -450px;
-        width: 100%;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
 
         @media (width > 768px) {
-            height: 80rem;
-            margin-top: -51.9rem;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: bottom;
             background-image: url("../assets/image/fundofinal.png");
         }
         @media (width <= 768px) and (width > 425px) {
-            height: 50rem;
-            margin-top: -21.6rem;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: bottom;
             background-image: url("../assets/image/fundofinal_tablet.png");
         }
         @media (width <= 425px) {
-            height: 20rem;
-            margin-top: 8.1rem;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: bottom;
-            background-image: url("../assets/image/fundofinal_mobile.png");
+            display: none;
         }
     }
 
     .contato-card {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        justify-self: center;
+        width: min(100%, 800px);
+        margin: 0 auto;
         text-align: center;
-        max-width: 800px;
         background: $cor-fundo-card;
         border-radius: 15px;
         font-size: 18px;
@@ -899,7 +874,7 @@ $fonte-padrao: Arial, Helvetica, sans-serif;
         font-family: $fonte-padrao;
         @media (width <= 425px) {
             padding: 30px 20px 20px 20px;
-            width: 260px;
+            max-width: 320px;
         }
 
         h2{
@@ -913,6 +888,7 @@ $fonte-padrao: Arial, Helvetica, sans-serif;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            gap: 10px;
 
             .contato-item {
                 display: flex;
@@ -947,56 +923,65 @@ $fonte-padrao: Arial, Helvetica, sans-serif;
 $cor-texto-footer: white;
 $fonte-padrao: Arial, Helvetica, sans-serif;
 footer{
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-top: 30rem;
-    padding: 100px 0px 0px 100px;
+    position: relative;
+    padding: clamp(3rem, 7vw, 6.25rem) clamp(1.25rem, 7vw, 6.25rem) 2rem;
     background-color: $cor-azul-gostou;
     display: flex;
     justify-content:space-between;
-    z-index: 2;
-    @media (width <= 768px) and (width > 425px) {
-        margin-top: 29rem;
-        padding: 0px;
-    }
-
-    @media (width <= 425px) {
-        margin-top: 34rem;
-        padding: 0px 0px 20px 0px;
-        flex-direction: column;
-    }
 
     .parte_esquerda{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 90px 0px 0px 40px;
-        @media (width <= 425px) {
-            padding: 70px 0px 0px 10px;
-        }
+        padding: 0;
+        gap: 30px;
 
         .footer-coluna-logo {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;
-            @media (width <= 425px) {
-                margin-left: 9rem;
-                margin-bottom: 1rem;
-                flex-direction: column;
-            }
+            justify-content: space-around;
+
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                @media (width <= 425px) {
+                    flex-direction: column;
+                }
+
+                div{
+                    @media (width <= 530px) {
+                        flex-direction: column;
+                    }
+                }
+            }            
 
             a{
                 img {
                     width: 100px;
                 } 
             }
+
+            .logo_cec{
+                @media (width <= 530px) {
+                    display: none;
+                }
+            }
+
+            .logo_cec_mobile{
+                display: none;
+                @media (width <= 530px) {
+                    display: block;
+                }
+            }
             
 
             .redes {
                 display: flex;
                 column-gap: 20px;
+                @media (width <= 425px) {
+                    flex-direction: row;
+                }
 
                 a{
                     &:hover{
@@ -1016,14 +1001,16 @@ footer{
         .footer-conteudo {
             font-family: $fonte-padrao;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: flex-start;
-            margin: 1rem 0px 0px 1.5rem;
-            width: 80%;
-            gap: 12px;
+            width: 100%;
+            gap: 30px;
 
-            @media (width <= 425px) {
+            @media (width <= 530px) {
+                display: flex;
                 flex-direction: column;
+                width: max-content;
+                align-self: center;
             }
             
             .footer-coluna {
@@ -1058,27 +1045,6 @@ footer{
             }
         }
     }
-    
-    .parte_direita{
-        width: 50%;
-        display: flex;
-        justify-content: end;
-        @media (width <= 768px) and (width > 425px) {
-            img{
-                scale: 0.8;
-                position: absolute;
-                right: -2.6rem;
-                bottom: -3.4rem;
-            }
-        }
-
-        @media (width <= 425px) {
-            .comp{
-                display: none;
-            }
-        }
-        
-    }
 }
 
 
@@ -1095,7 +1061,7 @@ footer{
 
 @keyframes deslizar-direita {
     0% {
-        transform: translateX(calc(-25% - (#{$carousel-gap} / 2)));
+        transform: translateX(calc(-15% - (#{$carousel-gap})));
     }
     100% {
         transform: translateX(0);

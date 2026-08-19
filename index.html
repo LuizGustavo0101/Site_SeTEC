@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <body>
         <header>
             <div id="name">
-                <img src="./assets/image/logo setec.png" alt="logo_setec" class="logo">
+                <img src="./assets/image/logo_setec.png" alt="logo_setec" class="logo">
                 <i class="divisoria_logo"></i>
                 <label class="name">Semana Temática da Engenharia Civil</label>
             </div>
@@ -33,7 +33,7 @@
             </div>
 
             <div id="menu_mobile">
-                <input class="checkbox-toggle" type="checkbox" />
+                <input class="checkbox-toggle" type="checkbox" aria-label="Abrir menu de navegação" />
                 <div class="hamburger">
                     <div></div>
                 </div>
@@ -46,7 +46,7 @@
                         <div>
                             <ul>
                             <li><a href="#carrosel_icons">Sobre nós</a></li>
-                            <li><a href="#ultimos_diamantes">Últimos Diamantes</a></li>
+                            <li><a href="#last_diamonds">Últimos Diamantes</a></li>
                             <li><a href="#edicoes">Edições passadas</a></li>
                             <li><a href="#gostou">Contato</a></li>
                             </ul>
@@ -77,22 +77,22 @@
                 <div class="trilha">
 
                     <!-- Primeira sequência -->
-                    <img src="./assets/icon/construction.png" alt="icon1-carrossel">
-                    <img src="./assets/icon/golden-gate-bridge.png" alt="icon2-carrossel">
-                    <img src="./assets/icon/mapping.png" alt="icon3-carrossel">
-                    <img src="./assets/icon/model.png" alt="icon4-carrossel">
-                    <img src="./assets/icon/sofware.png" alt="icon5-carrossel">
-                    <img src="./assets/icon/wall.png" alt="icon6-carrossel">
-                    <img src="./assets/icon/worker.png" alt="icon7-carrossel">
+                    <img src="./assets/icon/construction.svg" alt="icon1-carrossel">
+                    <img src="./assets/icon/golden-gate-bridge.svg" alt="icon2-carrossel">
+                    <img src="./assets/icon/mapping.svg" alt="icon3-carrossel">
+                    <img src="./assets/icon/model.svg" alt="icon4-carrossel">
+                    <img src="./assets/icon/sofware.svg" alt="icon5-carrossel">
+                    <img src="./assets/icon/wall.svg" alt="icon6-carrossel">
+                    <img src="./assets/icon/worker.svg" alt="icon7-carrossel">
 
                     <!-- Duplicata -->
-                    <img src="./assets/icon/construction.png" alt="icon1-carrossel">
-                    <img src="./assets/icon/golden-gate-bridge.png" alt="icon2-carrossel">
-                    <img src="./assets/icon/mapping.png" alt="icon3-carrossel">
-                    <img src="./assets/icon/model.png" alt="icon4-carrossel">
-                    <img src="./assets/icon/sofware.png" alt="icon5-carrossel">
-                    <img src="./assets/icon/wall.png" alt="icon6-carrossel">
-                    <img src="./assets/icon/worker.png" alt="icon7-carrossel">
+                    <img src="./assets/icon/construction.svg" alt="icon1-carrossel">
+                    <img src="./assets/icon/golden-gate-bridge.svg" alt="icon2-carrossel">
+                    <img src="./assets/icon/mapping.svg" alt="icon3-carrossel">
+                    <img src="./assets/icon/model.svg" alt="icon4-carrossel">
+                    <img src="./assets/icon/sofware.svg" alt="icon5-carrossel">
+                    <img src="./assets/icon/wall.svg" alt="icon6-carrossel">
+                    <img src="./assets/icon/worker.svg" alt="icon7-carrossel">
                 </div>
             </div>
         </section>
@@ -101,7 +101,7 @@
             <div id="textos">
                 <div class="bloco">
                     <label class="subtitulo">
-                        O que somos?
+                        O que é a SeTEC ?
                     </label>
                     <p class="texto">
                         SeTEC é a Semana Temática de Engenharia Civil da Escola Politécnica da USP, um evento anual que conta com palestras de profissionais da área, rodas de conversa, workshops práticos, networking e muita troca de experiência
@@ -125,14 +125,14 @@
                         Somos um evento organizado pelos próprios estudantes de Engenharia 
                         Civil da USP. Ou seja: um evento feito por estudantes, para 
                         estudantes.
-                        <span class="saiba_mais_organizacao">Para saber mais, <a href="#" id="ultimos_diamantes">clique aqui</a></span>
+                        <span class="saiba_mais_organizacao">Para saber mais, <a href="#last_diamonds">clique aqui</a></span>
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="last_diamonds">
-            <h1 class="titulo-diamantes">
+        <section id="last_diamonds" aria-labelledby="titulo-diamantes">
+            <h1 class="titulo-diamantes" id="titulo-diamantes">
                 Cotas Diamantes das últimas edições
             </h1>
 
@@ -210,7 +210,7 @@
             <div class="edicao">
                 <h2>SeTEC XV</h2>
                 <div class="carousel">
-                    <button class="seta esquerda">&#10094;</button>
+                    <button class="seta esquerda" type="button" aria-label="Foto anterior da SeTEC XV">&#10094;</button>
 
                     <div class="carousel-track-container">
                         <div class="carousel-track">
@@ -219,7 +219,7 @@
                         </div>
                     </div>
 
-                    <button class="seta direita">&#10095;</button>
+                    <button class="seta direita" type="button" aria-label="Próxima foto da SeTEC XV">&#10095;</button>
                 </div>
             </div>
 
@@ -227,7 +227,7 @@
             <div class="edicao">
                 <h2>SeTEC XIV</h2>
                 <div class="carousel">
-                    <button class="seta esquerda">&#10094;</button>
+                    <button class="seta esquerda" type="button" aria-label="Foto anterior da SeTEC XIV">&#10094;</button>
 
                     <div class="carousel-track-container">
                         <div class="carousel-track">
@@ -236,7 +236,7 @@
                         </div>
                     </div>
 
-                    <button class="seta direita">&#10095;</button>
+                    <button class="seta direita" type="button" aria-label="Próxima foto da SeTEC XIV">&#10095;</button>
                 </div>
             </div>
         </section>
@@ -257,7 +257,7 @@
 
                     <div class="contato-item">
                         <img src="./assets/icon/whatsapp_1.png" alt="">
-                        <span><a href="https://wa.me/+5511983681452?text=Ola!! Vim pelo site, gostaria de falar sobre a SeTEC">(11)98368-1452</a></span>
+                        <span><a href="https://wa.me/+5511983681452?text=Ola Tiago!! Vim pelo site, gostaria de falar sobre a SeTEC">Tiago: (11)98368-1452</a></span>
                     </div>
 
                     <div class="contato-item">
@@ -271,13 +271,20 @@
         <footer>
             <div class="parte_esquerda">
                 <div class="footer-coluna-logo">
-                    <a href="#" class="logo_setec"><img src="./assets/image/logo setec.png" alt="SeTEC"></a>
+                    <div>
+                        <div>
+                            <a href="#" class="logo_setec"><img src="./assets/image/logo_setec.png" alt="SeTEC"></a>
+                            <a href="#" class="logo_cec_mobile"><img src="./assets/image/Logo_CEC.svg" alt="CEC"></a>
+                        </div>
 
-                    <div class="redes">
-                        <a href="https://web.facebook.com/setecpoli/?_rdc=1&_rdr#"><img src="./assets/icon/facebook.png"></a>
-                        <a href="https://www.instagram.com/setecpoli/"><img src="./assets/icon/instagram.png"></a>
-                        <a href="https://br.linkedin.com/company/setecpoli"><img src="./assets/icon/linkedin.png"></a>
+                        <div class="redes">
+                            <a href="https://web.facebook.com/setecpoli/?_rdc=1&_rdr#"><img src="./assets/icon/facebook.svg"></a>
+                            <a href="https://www.instagram.com/setecpoli/"><img src="./assets/icon/instagram.svg"></a>
+                            <a href="https://br.linkedin.com/company/setecpoli"><img src="./assets/icon/linkedin.svg"></a>
+                        </div>
                     </div>
+                
+                    <a href="#" class="logo_cec"><img src="./assets/image/Logo_CEC.svg" alt="CEC"></a>
                 </div>
 
                 <div class="footer-conteudo">
@@ -286,14 +293,14 @@
                         <div class="footer-itens">
                             <a href="#name">Home</a>
                             <a href="#carrosel_icons">Sobre nós</a>
-                            <a href="#ultimos_diamantes">Últimos Diamantes</a>
+                            <a href="#last_diamonds">Últimos Diamantes</a>
                             <a href="#edicoes">Edições passadas</a>
                             <a href="#gostou">Contato</a>
                         </div>
                     </div>
 
                     <div class="footer-coluna">
-                        <h3>Parceiras Cota Diamante</h3>
+                        <h3>Cota Diamante e Ouro</h3>
                         <div class="footer-itens">
                             <a href="https://www.concremat.com.br/">Concremat</a>
                             <a href="https://www2.gerdau.com.br/">Gerdau</a>
@@ -302,10 +309,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="parte_direita">
-                <img src="./assets/image/cec.png" class="comp" alt="logo_cec">
             </div>
         </footer>
     </body>

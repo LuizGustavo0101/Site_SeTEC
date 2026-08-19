@@ -2,15 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-drag: none;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
 }
 
 header {
@@ -27,6 +28,11 @@ header {
   color: #ffffff;
   box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
   z-index: 3;
+}
+@media (width <= 425px) {
+  header {
+    justify-content: center;
+  }
 }
 header #name {
   display: flex;
@@ -45,11 +51,6 @@ header #name a {
 header #name .logo {
   height: 35px;
   width: 60px;
-}
-@media (width <= 425px) {
-  header #name .logo {
-    margin-left: 8.4rem;
-  }
 }
 header #name .logo:hover {
   cursor: pointer;
@@ -131,7 +132,7 @@ header #listas .select .bar {
 header #menu_mobile {
   display: none;
 }
-@media (width <= 768px) {
+@media (max-width: 914px) {
   header #menu_mobile {
     display: block;
   }
@@ -302,6 +303,12 @@ header #menu_mobile {
 
 #imagem_inicial {
   margin-top: 60px;
+  position: relative;
+}
+#imagem_inicial .img_note, #imagem_inicial .img_tablet, #imagem_inicial .img_mobile {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 @media (max-width: 914px) {
   #imagem_inicial .img_note {
@@ -326,14 +333,8 @@ header #menu_mobile {
 }
 #imagem_inicial .main_information {
   position: absolute;
-  top: 8rem;
-  right: 3.5rem;
-}
-@media (max-width: 1000px) {
-  #imagem_inicial .main_information {
-    right: 2rem;
-    top: 7rem;
-  }
+  top: clamp(2rem, 8vw, 8rem);
+  right: clamp(1rem, 3.5vw, 3.5rem);
 }
 @media (max-width: 684px) {
   #imagem_inicial .main_information {
@@ -341,30 +342,14 @@ header #menu_mobile {
   }
 }
 #imagem_inicial .main_information h1 {
-  font-size: 70px;
+  font-size: clamp(2.5rem, 5vw, 70px);
   color: white;
-}
-@media (max-width: 1010px) {
-  #imagem_inicial .main_information h1 {
-    font-size: calc(70px - 25%);
-  }
-}
-@media (max-width: 914px) {
-  #imagem_inicial .main_information h1 {
-    font-size: calc(70px - 175%);
-  }
 }
 #imagem_inicial .main_information p {
   color: white;
   text-align: right;
-  font-size: 30px;
-  margin-right: 15px;
-}
-@media (max-width: 914px) {
-  #imagem_inicial .main_information p {
-    font-size: calc(30px - 40%);
-    margin-right: 5px;
-  }
+  font-size: clamp(1rem, 2.5vw, 30px);
+  margin-right: 0;
 }
 #imagem_inicial .main_information_tm {
   display: none;
@@ -382,13 +367,20 @@ header #menu_mobile {
     color: white;
     font-size: 20px;
   }
+  #imagem_inicial .main_information_tm h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  #imagem_inicial .main_information_tm p {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    line-height: 1.2;
+  }
 }
 
 .faixa-icones {
   width: 100%;
   max-width: 1200px;
   margin: 4rem auto;
-  padding: 15px auto;
+  padding: 15px 0;
   overflow: hidden;
   position: relative;
 }
@@ -420,13 +412,14 @@ header #menu_mobile {
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
+  filter: brightness(90%);
 }
 
 #texto_apresentacao #textos {
-  height: 570px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
+  padding: 2rem 0;
 }
 #texto_apresentacao #textos .bloco {
   padding: 0px 5%;
@@ -444,22 +437,18 @@ header #menu_mobile {
   text-align: right;
 }
 #texto_apresentacao #textos .bloco .subtitulo {
-  font-size: 28px;
+  font-size: clamp(1.25rem, 2.5vw, 28px);
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
 }
 #texto_apresentacao #textos .bloco .texto {
   color: rgb(100, 100, 100);
-  font-size: 22px;
+  font-size: clamp(1rem, 2vw, 22px);
   margin-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 @media (width <= 914px) and (width > 425px) {
   #texto_apresentacao #textos {
-    height: 620px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     align-items: center;
   }
   #texto_apresentacao #textos .bloco {
@@ -472,10 +461,6 @@ header #menu_mobile {
 }
 @media (width <= 425px) {
   #texto_apresentacao #textos {
-    height: 600px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     align-items: center;
   }
   #texto_apresentacao #textos .bloco {
@@ -484,12 +469,6 @@ header #menu_mobile {
   #texto_apresentacao #textos .bloco:nth-child(even) {
     margin: 0;
     text-align: center;
-  }
-  #texto_apresentacao #textos .bloco .subtitulo {
-    font-size: calc(28px - 30%);
-  }
-  #texto_apresentacao #textos .bloco .texto {
-    font-size: calc(22px - 30%);
   }
 }
 
@@ -609,28 +588,16 @@ header #menu_mobile {
 #edicoes {
   display: flex;
   flex-direction: column;
-  justify-self: center;
-  align-self: center;
   font-family: Arial, Helvetica, sans-serif;
   width: 90%;
   max-width: 1200px;
-  margin: 0px 0px 40rem 0px;
-  padding: 10% 0;
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 8rem) 0;
   background-color: transparent;
-}
-@media (width <= 768px) and (width > 425px) {
-  #edicoes {
-    margin: 0px 0px 18rem 0px;
-  }
-}
-@media (width <= 425px) {
-  #edicoes {
-    margin: 0px 0px 0px 0px;
-  }
 }
 #edicoes .titulo-secao {
   text-align: center;
-  font-size: 40px;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 3rem;
 }
 #edicoes .evento-atual {
@@ -647,12 +614,15 @@ header #menu_mobile {
   max-width: 100%;
 }
 #edicoes .edicao {
-  margin-bottom: 150px;
+  margin-bottom: clamp(4rem, 10vw, 9.375rem);
 }
 #edicoes .edicao h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 30px;
+}
+#edicoes .edicao:last-child {
+  margin-bottom: 0;
 }
 #edicoes .carousel {
   position: relative;
@@ -662,7 +632,7 @@ header #menu_mobile {
 }
 #edicoes .carousel .carousel-track-container {
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16/9;
   background: #ddd;
   overflow: hidden;
   border-radius: 12px;
@@ -700,59 +670,47 @@ header #menu_mobile {
 }
 
 #gostou {
-  position: absolute;
-  padding: 100px 0px 3% 0px;
-  margin: 10rem 0px 0px 0px;
-  z-index: 2;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(4rem, 8vw, 6.25rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
   background-color: #0079ef;
-  left: 0;
   width: 100%;
+  overflow: hidden;
 }
 #gostou::before {
   content: "";
-  z-index: 2;
   position: absolute;
-  left: 0;
-  top: -450px;
-  width: 100%;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
 }
 @media (width > 768px) {
   #gostou::before {
-    height: 80rem;
-    margin-top: -51.9rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
     background-image: url("../assets/image/fundofinal.png");
   }
 }
 @media (width <= 768px) and (width > 425px) {
   #gostou::before {
-    height: 50rem;
-    margin-top: -21.6rem;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
     background-image: url("../assets/image/fundofinal_tablet.png");
   }
 }
 @media (width <= 425px) {
   #gostou::before {
-    height: 20rem;
-    margin-top: 8.1rem;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
-    background-image: url("../assets/image/fundofinal_mobile.png");
+    display: none;
   }
 }
 #gostou .contato-card {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-self: center;
+  width: min(100%, 800px);
+  margin: 0 auto;
   text-align: center;
-  max-width: 800px;
   background: white;
   border-radius: 15px;
   font-size: 18px;
@@ -762,7 +720,7 @@ header #menu_mobile {
 @media (width <= 425px) {
   #gostou .contato-card {
     padding: 30px 20px 20px 20px;
-    width: 260px;
+    max-width: 320px;
   }
 }
 #gostou .contato-card h2 {
@@ -777,6 +735,7 @@ header #menu_mobile {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 10px;
 }
 #gostou .contato-card .contatos .contato-item {
   display: flex;
@@ -803,60 +762,64 @@ header #menu_mobile {
 }
 
 footer {
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin-top: 30rem;
-  padding: 100px 0px 0px 100px;
+  position: relative;
+  padding: clamp(3rem, 7vw, 6.25rem) clamp(1.25rem, 7vw, 6.25rem) 2rem;
   background-color: #0079ef;
   display: flex;
   justify-content: space-between;
-  z-index: 2;
-}
-@media (width <= 768px) and (width > 425px) {
-  footer {
-    margin-top: 29rem;
-    padding: 0px;
-  }
-}
-@media (width <= 425px) {
-  footer {
-    margin-top: 34rem;
-    padding: 0px 0px 20px 0px;
-    flex-direction: column;
-  }
 }
 footer .parte_esquerda {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 90px 0px 0px 40px;
-}
-@media (width <= 425px) {
-  footer .parte_esquerda {
-    padding: 70px 0px 0px 10px;
-  }
+  padding: 0;
+  gap: 30px;
 }
 footer .parte_esquerda .footer-coluna-logo {
   display: flex;
+  justify-content: space-around;
+}
+footer .parte_esquerda .footer-coluna-logo div {
+  display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 @media (width <= 425px) {
-  footer .parte_esquerda .footer-coluna-logo {
-    margin-left: 9rem;
-    margin-bottom: 1rem;
+  footer .parte_esquerda .footer-coluna-logo div {
+    flex-direction: column;
+  }
+}
+@media (width <= 530px) {
+  footer .parte_esquerda .footer-coluna-logo div div {
     flex-direction: column;
   }
 }
 footer .parte_esquerda .footer-coluna-logo a img {
   width: 100px;
 }
+@media (width <= 530px) {
+  footer .parte_esquerda .footer-coluna-logo .logo_cec {
+    display: none;
+  }
+}
+footer .parte_esquerda .footer-coluna-logo .logo_cec_mobile {
+  display: none;
+}
+@media (width <= 530px) {
+  footer .parte_esquerda .footer-coluna-logo .logo_cec_mobile {
+    display: block;
+  }
+}
 footer .parte_esquerda .footer-coluna-logo .redes {
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+@media (width <= 425px) {
+  footer .parte_esquerda .footer-coluna-logo .redes {
+    flex-direction: row;
+  }
 }
 footer .parte_esquerda .footer-coluna-logo .redes a:hover {
   transform: scale(1.2);
@@ -869,15 +832,18 @@ footer .parte_esquerda .footer-coluna-logo .redes a img {
 footer .parte_esquerda .footer-conteudo {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  margin: 1rem 0px 0px 1.5rem;
-  width: 80%;
-  gap: 12px;
+  width: 100%;
+  gap: 30px;
 }
-@media (width <= 425px) {
+@media (width <= 530px) {
   footer .parte_esquerda .footer-conteudo {
+    display: flex;
     flex-direction: column;
+    width: -moz-max-content;
+    width: max-content;
+    align-self: center;
   }
 }
 footer .parte_esquerda .footer-conteudo .footer-coluna h3 {
@@ -905,28 +871,10 @@ footer .parte_esquerda .footer-conteudo .footer-coluna .footer-itens a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-footer .parte_direita {
-  width: 50%;
-  display: flex;
-  justify-content: end;
-}
-@media (width <= 768px) and (width > 425px) {
-  footer .parte_direita img {
-    scale: 0.8;
-    position: absolute;
-    right: -2.6rem;
-    bottom: -3.4rem;
-  }
-}
-@media (width <= 425px) {
-  footer .parte_direita .comp {
-    display: none;
-  }
-}
 
 @keyframes deslizar-direita {
   0% {
-    transform: translateX(calc(-25% - 3rem / 2));
+    transform: translateX(calc(-15% - (3rem)));
   }
   100% {
     transform: translateX(0);

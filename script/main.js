@@ -1,64 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const listItems = document.querySelectorAll('#nav_list ul li');
-    const bar = document.querySelector('.bar');
+    const listItems = document.querySelectorAll("#nav_list ul li");
+    const bar = document.querySelector(".bar");
+    const navList = document.querySelector("#nav_list");
 
-    // Função que move a barra e ajusta a largura
     function moveBar(item) {
-        bar.style.width = item.offsetWidth + 10 + 'px';
-        bar.style.left = item.offsetLeft + (-3  ) + 'px';
+        if (!bar || !item) return;
+
+        bar.style.width = `${item.offsetWidth + 10}px`;
+        bar.style.left = `${item.offsetLeft - 3}px`;
     }
 
-    // Define a barra no primeiro item por padrão ao carregar a página
     if (listItems.length > 0) {
         moveBar(listItems[0]);
+
+        listItems.forEach((item) => {
+            item.addEventListener("mouseenter", () => moveBar(item));
+            item.querySelector("a")?.addEventListener("focus", () => moveBar(item));
+        });
+
+        navList?.addEventListener("mouseleave", () => moveBar(listItems[0]));
+        window.addEventListener("resize", () => moveBar(listItems[0]));
     }
 
-    // Faz a barra seguir o mouse quando passa por cima de outro item
-    listItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            moveBar(item);
+    const menuToggle = document.querySelector(".checkbox-toggle");
+    document.querySelectorAll("#menu_mobile .menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (menuToggle) menuToggle.checked = false;
         });
     });
 
-    // Opcional: Se quiser que a barra volte para o item ativo (ex: o primeiro) quando tirar o mouse do menu
-    const navList = document.querySelector('#nav_list');
-    navList.addEventListener('mouseleave', () => {
-        // Substitua listItems[0] pelo item que representa a página atual se necessário
-        moveBar(listItems[0]); 
-    });
-});
+    document.querySelectorAll(".carousel").forEach((carousel) => {
+        const track = carousel.querySelector(".carousel-track");
+        const slides = track ? Array.from(track.children) : [];
+        const btnEsquerda = carousel.querySelector(".seta.esquerda");
+        const btnDireita = carousel.querySelector(".seta.direita");
 
+        if (!track || slides.length === 0 || !btnEsquerda || !btnDireita) return;
 
-const todosOsCarrosseis = document.querySelectorAll('.carousel');
+        let slideAtual = 0;
 
-todosOsCarrosseis.forEach((carousel) => {
-    const track = carousel.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const btnEsquerda = carousel.querySelector('.seta.esquerda');
-    const btnDireita = carousel.querySelector('.seta.direita');
-
-    let slideAtual = 0;
-
-    function moverCarrossel(index) {
-        const deslocamento = -(index * 100);
-        track.style.transform = `translateX(${deslocamento}%)`;
-    }
-
-    btnDireita.addEventListener('click', () => {
-        if (slideAtual === slides.length - 1) {
-            slideAtual = 0; 
-        } else {
-            slideAtual++;
+        function moverCarrossel(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
         }
-        moverCarrossel(slideAtual);
-    });
 
-    btnEsquerda.addEventListener('click', () => {
-        if (slideAtual === 0) {
-            slideAtual = slides.length - 1; 
-        } else {
-            slideAtual--;
-        }
-        moverCarrossel(slideAtual);
+        btnDireita.addEventListener("click", () => {
+            slideAtual = (slideAtual + 1) % slides.length;
+            moverCarrossel(slideAtual);
+        });
+
+        btnEsquerda.addEventListener("click", () => {
+            slideAtual = (slideAtual - 1 + slides.length) % slides.length;
+            moverCarrossel(slideAtual);
+        });
     });
 });
